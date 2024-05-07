@@ -1,28 +1,40 @@
+import { useState } from "react";
+
 import "./App.css";
+import { Header } from "./Header";
+import { Todos } from "./Todos";
+
+export type TodoType = {
+  id: number;
+  title: string;
+  completed: boolean;
+};
+
+const todosMock: TodoType[] = [
+  {
+    id: 1,
+    title: "Learn react with TS",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Learn useContext",
+    completed: false,
+  },
+];
 
 function App() {
+  const [todos, setTodos] = useState<TodoType[]>(todosMock);
+
+  const addTodo = (todo: TodoType) => {
+    setTodos([...todos, todo]);
+  };
+
   return (
     <>
       <h1>Todo App</h1>
-      <div id="myDIV" className="header">
-        <form>
-          <p>
-            <input type="text" id="myInput" placeholder="Title..." />
-          </p>
-          <p>
-            <button className="addBtn">Add</button>
-          </p>
-        </form>
-      </div>
-
-      <ul id="myUL">
-        <li>Hit the gym</li>
-        <li className="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-      </ul>
+      <Header addTodo={addTodo} />
+      <Todos todos={todos} />
     </>
   );
 }

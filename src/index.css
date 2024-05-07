@@ -26,6 +26,10 @@ ul li {
   user-select: none;
 }
 
+.summary {
+  background-color: #f44336;
+}
+
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   background: #f9f9f9;
