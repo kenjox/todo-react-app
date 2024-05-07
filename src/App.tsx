@@ -5,9 +5,14 @@ function App() {
     <>
       <h1>Todo App</h1>
       <div id="myDIV" className="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title..." />
-        <span className="addBtn">Add</span>
+        <form>
+          <p>
+            <input type="text" id="myInput" placeholder="Title..." />
+          </p>
+          <p>
+            <button className="addBtn">Add</button>
+          </p>
+        </form>
       </div>
 
       <ul id="myUL">
