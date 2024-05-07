@@ -21,11 +21,9 @@ export const Header = ({ addTodo }: HeaderProps) => {
   return (
     <div id="myDIV" className="header">
       <section className="summary">
-        <ul>
-          <li>Total todos 5</li>
-          <li>Completed 2</li>
-          <li>In progress: 3</li>
-        </ul>
+        <p>Total: 5</p>
+        <p>Completed: 2</p>
+        <p>In progress: 3</p>
       </section>
 
       <form onSubmit={handleSubmit}>
