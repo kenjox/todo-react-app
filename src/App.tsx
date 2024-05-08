@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import "./App.css";
 import { Header } from "./Header";
 import { Todos } from "./Todos";
+import { Legend } from "./Legend";
 
 export type TodoType = {
   id: number;
@@ -31,11 +31,14 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Todo App</h1>
+    <main>
+      <section className="top_header">
+        <h1>Todo App</h1>
+        <Legend />
+      </section>
       <Header addTodo={addTodo} />
       <Todos todos={todos} />
-    </>
+    </main>
   );
 }
 

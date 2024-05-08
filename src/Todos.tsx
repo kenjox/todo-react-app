@@ -9,12 +9,12 @@ type TodoProp = {
 };
 
 function Todo({ todo }: TodoProp) {
-  return <li>{todo.title}</li>;
+  return <li className="todo_item">{todo.title}</li>;
 }
 
 export const Todos = ({ todos }: TodosProp) => {
   return (
-    <ul id="myUL">
+    <ul className="todos_list">
       {todos.map((todo) => {
         return <Todo key={todo.id} todo={todo} />;
       })}
