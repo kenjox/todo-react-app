@@ -1,23 +1,17 @@
-import { TodoType } from "./App";
+import { Todo } from "./Todo";
+import { useTodoContext } from "./useTodoContext";
 
-type TodosProp = {
-  todos: TodoType[];
-};
-
-type TodoProp = {
-  todo: TodoType;
-};
-
-function Todo({ todo }: TodoProp) {
-  return <li className="todo_item">{todo.title}</li>;
-}
-
-export const Todos = ({ todos }: TodosProp) => {
+export const Todos = () => {
+  const ctx = useTodoContext();
   return (
     <ul className="todos_list">
-      {todos.map((todo) => {
-        return <Todo key={todo.id} todo={todo} />;
-      })}
+      {ctx.todos.length !== 0 ? (
+        ctx.todos.map((todo) => {
+          return <Todo key={todo.id} todo={todo} />;
+        })
+      ) : (
+        <h1>You have no todos yet 💩</h1>
+      )}
     </ul>
   );
 };

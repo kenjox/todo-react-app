@@ -117,4 +117,19 @@ body {
   margin: 20px;
   border: 4px solid green;
   font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+.todo_title,
+.cross_icon {
+  font-size: 24px;
+}
+.cross_icon {
+  cursor: pointer;
+  padding-right: 10px;
 }
