@@ -11,22 +11,26 @@ type TodosState = {
   totalTodos: number;
   completedTodos: number;
   inProgressTodos: number;
+};
+
+type TodoActions = {
   addTodo: (todo: TodoType) => void;
   toggleTodo: (todoId: number) => void;
   removeTodo: (todoId: number) => void;
 };
 
-export const TodoContext = createContext<TodosState | null>(null);
-
-// HOC
 type TodoContextProviderProps = {
   children: ReactNode;
 };
 
+type TodoContextValue = TodosState & TodoActions;
+
+export const TodoContext = createContext<TodoContextValue | null>(null);
+
 export const TodoContextProvider = ({ children }: TodoContextProviderProps) => {
   const [todos, setTodos] = useState<TodoType[]>([]);
 
-  const contextValue: TodosState = {
+  const contextValue: TodoContextValue = {
     todos,
     totalTodos: todos.length,
     completedTodos: todos.filter((todo) => todo.completed).length,
