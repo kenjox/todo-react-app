@@ -1,13 +1,9 @@
-import { useTodoContext } from "./useTodoContext";
-
 export const Summary = () => {
-  const ctx = useTodoContext();
-
   return (
     <section className="summary_section">
-      <p>Total: {ctx.totalTodos}</p>
-      <p>Completed: {ctx.completedTodos}</p>
-      <p>In progress: {ctx.inProgressTodos}</p>
+      <p>Total: 0</p>
+      <p>Completed: 0</p>
+      <p>In progress: 0</p>
     </section>
   );
 };

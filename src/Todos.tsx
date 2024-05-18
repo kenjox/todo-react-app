@@ -1,17 +1,20 @@
-import { Todo } from "./Todo";
-import { useTodoContext } from "./useTodoContext";
-
 export const Todos = () => {
-  const ctx = useTodoContext();
   return (
     <ul className="todos_list">
-      {ctx.todos.length !== 0 ? (
-        ctx.todos.map((todo) => {
-          return <Todo key={todo.id} todo={todo} />;
-        })
-      ) : (
-        <h1>You have no todos yet 💩</h1>
-      )}
+      <li className="todo_item">
+        <p>Todo 1</p>
+        <p>
+          <input type="checkbox" onChange={() => {}} />
+          <span className="checkbox_text">Completed</span>
+        </p>
+      </li>
+      <li className="todo_item">
+        <p className="todo_title completed">Todo 1</p>
+        <p>
+          <input type="checkbox" checked onChange={() => {}} />
+          <span className="checkbox_text">Completed</span>
+        </p>
+      </li>
     </ul>
   );
 };
