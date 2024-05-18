@@ -14,10 +14,10 @@ export const Legend = () => {
         <span className="legend_form"></span>AddTodoForm
       </li>
       <li>
-        <span className="legend_todos"></span>Todos
+        <span className="legend_todos"></span>TodosList
       </li>
       <li>
-        <span className="legend_todo"></span>Todo
+        <span className="legend_todo"></span>TodoItem
       </li>
     </ul>
   );

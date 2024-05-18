@@ -1,9 +1,15 @@
-export const Summary = () => {
+import { Stats } from "./App";
+
+type SummaryProps = {
+  stats: Stats;
+};
+
+export const Summary = ({ stats }: SummaryProps) => {
   return (
     <section className="summary_section">
-      <p>Total: 0</p>
-      <p>Completed: 0</p>
-      <p>In progress: 0</p>
+      <p>Total: {stats.total}</p>
+      <p>Completed: {stats.completed}</p>
+      <p>In progress: {stats.inProgress}</p>
     </section>
   );
 };
