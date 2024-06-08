@@ -7,8 +7,10 @@ type AddTodoFormProps = {
   addTodo: (todo: Todo) => void;
 };
 
-export const AddTodoForm = ({ addTodo }: AddTodoFormProps) => {
+export const AddTodoForm = React.memo(({ addTodo }: AddTodoFormProps) => {
   const [todoTitle, setTodoTitle] = React.useState("");
+
+  console.log("Rendering add new todo form ...");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -44,4 +46,4 @@ export const AddTodoForm = ({ addTodo }: AddTodoFormProps) => {
       </p>
     </form>
   );
-};
+});

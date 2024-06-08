@@ -3,7 +3,7 @@ import { TodoItem } from "./TodoItem";
 
 type TodosProps = {
   todos: Todo[];
-  toggleTodo: (todoId: string) => void;
+  toggleTodo: (todo: Todo) => void;
 };
 
 export const TodosList = ({ todos, toggleTodo }: TodosProps) => {
